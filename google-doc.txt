@@ -1,0 +1,82 @@
+Idea: A manager for a curated list of links
+
+ 1. Intended to be deployed to a website, managed by webmaster/whoever/Hal
+ 2. Small number of categories (shown in a main page) - still searchable
+ 3. Any number of tags (search or click on cloud)
+ 4. Need something cron-like to search for dead links - easy, probably some existing code for inspiration 
+ 5. Way to find new sites? Google alert? - maybe but still will need human intervention  yep
+ 6. Way to blacklist dumb sites that we keep finding
+ 7. Let admin set importance/relevance?
+ 8. Let user submit links
+ 9. Ordinary user does not see a login link (or have to login)
+10. Admin user(s) can add links
+11. Admin user(s) can approve links
+12. Admin user(s) can add to domain/URL blacklist
+
+1-3    are necessities
+4-6    are super-nice
+7       ehh?
+8-12   yes
+
+How manual search could work:
+
+Dropdown: Select category or "All"
+Dropdown? Select tag(s) (or none)
+Search field (can be blank if tags selected)
+
+Browsing the list:
+
+Start at front page - "more..." for each category? Categories scrollable?
+OR visit a tag cloud (or list if clouds are out of fashion?)
+
+
+
+Brainstorming database tables...
+
+Category: id, name
+Tags:     id, name
+Links:    id, url, cat-id, last seen alive, 
+          approved?, importance, relevance, 
+          list of tags (??), metadata (??)
+Users:    id, name (just admins for now)
+
+
+
+
+
+ Stories (if I’m writing these right):
+
+ 
+A user (guest)...
+
+
+ 1. Does not have to log in
+ 2. Does not see a login link
+ 3. Can view all/most categories at once
+ 4. Can see the top (?) links in each category
+ 5. Can switch to a single-category view (scrollable?)
+ 6. Can switch to a tag view (cloud?) with clickable tags
+ 7. Can search the titles by keyword (within category? with tag?)
+ 8. Can submit a link for admin approval (with category/tag suggestions)
+
+
+An admin user...
+
+
+ 9. Can add/delete a category
+10. Can add/delete a tag
+11. Can add/delete a link
+12. Can edit a link (title, category, tags)
+13. Can approve a submitted link
+14. Can add rules to blacklist (at least domain, maybe others)
+15. Can configure the crawler (categories, keywords, ...)
+
+The Crawler...
+
+
+16. Runs automatically from time to time
+17. Finds new links (via Google alert??) by keyword
+18. Weeds out existing links
+19. Weeds out according to blacklist
+20. Adds to queue for admin approval
+
