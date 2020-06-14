@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :curated_links
+  resources :admin_users
+  resources :tags
+  resources :link_categories
   resources :links
   resources :categories
   devise_for :users
