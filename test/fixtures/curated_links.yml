@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  url: MyString
+  cat_id: 1
+  last_verified: 2020-06-13
+  approved: false
+  importance: 1
+  relevance: 1
+  metadata: MyString
+
+two:
+  url: MyString
+  cat_id: 1
+  last_verified: 2020-06-13
+  approved: false
+  importance: 1
+  relevance: 1
+  metadata: MyString

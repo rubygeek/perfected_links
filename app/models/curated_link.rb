@@ -1,0 +1,2 @@
+class CuratedLink < ApplicationRecord
+end

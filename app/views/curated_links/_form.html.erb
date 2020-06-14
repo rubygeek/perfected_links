@@ -1,0 +1,52 @@
+<%= form_with(model: curated_link, local: true) do |form| %>
+  <% if curated_link.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(curated_link.errors.count, "error") %> prohibited this curated_link from being saved:</h2>
+
+      <ul>
+        <% curated_link.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :url %>
+    <%= form.text_field :url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cat_id %>
+    <%= form.number_field :cat_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_verified %>
+    <%= form.date_select :last_verified %>
+  </div>
+
+  <div class="field">
+    <%= form.label :approved %>
+    <%= form.check_box :approved %>
+  </div>
+
+  <div class="field">
+    <%= form.label :importance %>
+    <%= form.number_field :importance %>
+  </div>
+
+  <div class="field">
+    <%= form.label :relevance %>
+    <%= form.number_field :relevance %>
+  </div>
+
+  <div class="field">
+    <%= form.label :metadata %>
+    <%= form.text_field :metadata %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

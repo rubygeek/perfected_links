@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @curated_link.url %>
+</p>
+
+<p>
+  <strong>Cat:</strong>
+  <%= @curated_link.cat_id %>
+</p>
+
+<p>
+  <strong>Last verified:</strong>
+  <%= @curated_link.last_verified %>
+</p>
+
+<p>
+  <strong>Approved:</strong>
+  <%= @curated_link.approved %>
+</p>
+
+<p>
+  <strong>Importance:</strong>
+  <%= @curated_link.importance %>
+</p>
+
+<p>
+  <strong>Relevance:</strong>
+  <%= @curated_link.relevance %>
+</p>
+
+<p>
+  <strong>Metadata:</strong>
+  <%= @curated_link.metadata %>
+</p>
+
+<%= link_to 'Edit', edit_curated_link_path(@curated_link) %> |
+<%= link_to 'Back', curated_links_path %>

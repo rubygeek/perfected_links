@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Curated Links</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Url</th>
+      <th>Cat</th>
+      <th>Last verified</th>
+      <th>Approved</th>
+      <th>Importance</th>
+      <th>Relevance</th>
+      <th>Metadata</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @curated_links.each do |curated_link| %>
+      <tr>
+        <td><%= curated_link.url %></td>
+        <td><%= curated_link.cat_id %></td>
+        <td><%= curated_link.last_verified %></td>
+        <td><%= curated_link.approved %></td>
+        <td><%= curated_link.importance %></td>
+        <td><%= curated_link.relevance %></td>
+        <td><%= curated_link.metadata %></td>
+        <td><%= link_to 'Show', curated_link %></td>
+        <td><%= link_to 'Edit', edit_curated_link_path(curated_link) %></td>
+        <td><%= link_to 'Destroy', curated_link, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Curated Link', new_curated_link_path %>
